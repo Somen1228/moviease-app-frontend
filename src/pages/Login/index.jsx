@@ -19,7 +19,7 @@ function Login() {
       console.log(response);
       message.success("Login successfull");
       localStorage.setItem("token", response.token);
-      window.location.href = "/home";
+      navigate("/home");
     } else {
       message.error(response.data.message);
     }
