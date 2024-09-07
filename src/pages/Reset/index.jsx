@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 function ResetPasswordPage() {
   const navigate = useNavigate();
-    const onFinish = async (values) => {
 
+    const onFinish = async (values) => {
         const response = await resetPassword(values);
         if(response.status == 200) {
             message.success("Password Reset Successfully. Please login!")
