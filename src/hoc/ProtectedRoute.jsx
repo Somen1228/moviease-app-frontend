@@ -30,7 +30,11 @@ function ProtectedRoute({ children }) {
   console.log(user);
 
   if (loading) {
-    return <Spin size="large" />;
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <Spin size="large" />
+      </div>
+    );
   }
 
   if (user) {

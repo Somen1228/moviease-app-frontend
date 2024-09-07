@@ -1,7 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function PageNotFound() {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(localStorage.getItem("token")) {
+            navigate("/")
+        }
+    }, [])
+
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
       <h1 className="text-9xl font-bold text-gray-800">404</h1>
