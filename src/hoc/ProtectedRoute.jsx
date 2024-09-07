@@ -50,7 +50,7 @@ function ProtectedRoute({ children }) {
     );
   }
 
-  return null; // or a fallback UI if needed
+  return null; 
 }
 
 export default ProtectedRoute;
