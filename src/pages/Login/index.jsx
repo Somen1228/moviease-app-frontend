@@ -10,7 +10,7 @@ function Login() {
     if(localStorage.getItem("token")) {
       navigate("/home");
     }
-  }, []);
+  }, [navigate]);
 
   const onFinish = async (values) => {
     const response = await LoginUser(values);

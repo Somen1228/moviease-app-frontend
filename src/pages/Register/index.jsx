@@ -1,21 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Form, Button, Input } from "antd";
 import { RegisterUser } from '../../calls/users';
 import { message } from 'antd';
 
 function Register() {
-
+    const navigate = useNavigate();
+    
     const onFinish = async (values) => {
         console.log("Form for register page is submitted");
         const response = await RegisterUser(values);
         console.log(response);
         if(response.status == "201") {
             message.success("You are registered successfully! Please login to continue")
-            
-            setTimeout(()=>{
               navigate("/")
-            }, 2000)
         } else {
             message.error(response.data.message)
         }
