@@ -23,14 +23,10 @@ export const RegisterUser = async (userObj) => {
 export const LoginUser = async (userObj) => {
 
   try {    
-    console.log(API_URL);
-    
     const response = await axiosInstance.post(`${API_URL}/login`, {
       email: userObj.email,
       password: userObj.password
     })
-    console.log(response);
-    
     return response.data;
   } catch (err) {
       console.log(err);

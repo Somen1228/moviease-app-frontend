@@ -5,6 +5,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './hoc/ProtectedRoute';
 import { Spin } from 'antd';
+import PageNotFound from './pages/PageNotFound/PageNotFound.jsx';
 
 // Lazy load components
 const Navbar = lazy(() => import('./components/Navbar.jsx'));
@@ -35,6 +36,7 @@ function App() {
             <Route path="/bookedShows" element={<ProtectedRoute><Navbar /><BookedShows /></ProtectedRoute>} />
             <Route path="/movie/:id" element={<ProtectedRoute><Navbar /><SingleMovie /></ProtectedRoute>} />
             <Route path="/book-show/:id" element={<ProtectedRoute><Navbar /><BookShowPage /></ProtectedRoute>} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </Suspense>
       </BrowserRouter>
