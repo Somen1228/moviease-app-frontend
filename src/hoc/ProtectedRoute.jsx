@@ -10,6 +10,7 @@ function ProtectedRoute({ children }) {
 
   const callForUserDetails = async () => {
     const response = await getUserDetails();
+    console.log(response)
     if (response.success) {
       setUser(response.data);
     } else {
