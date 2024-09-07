@@ -13,7 +13,7 @@ function ProtectedRoute({ children }) {
     if (response.success) {
       setUser(response.data);
     } else {
-      navigate("/non-existent");
+      navigate("/");
     }
     setLoading(false);
   };
@@ -27,7 +27,6 @@ function ProtectedRoute({ children }) {
     }
   }, [navigate]);
 
-  console.log(user);
 
   if (loading) {
     return (
